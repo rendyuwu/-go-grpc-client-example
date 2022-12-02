@@ -1,0 +1,17 @@
+syntax="proto3";
+
+option go_package = "github.com/rendyuwu/go-grpc-client-example/model";
+
+message UserRequest {
+  string username = 1;
+}
+
+message UserResponse {
+  string name = 1;
+  string username = 2;
+  uint32 age = 3;
+}
+
+service User {
+  rpc FindUserByEmail(UserRequest) returns (UserResponse){}
+}
